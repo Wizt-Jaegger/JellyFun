@@ -1,0 +1,129 @@
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+.footer {
+    background-color: #3f4330;
+    color: #fff;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1900px;
+    margin: 0 auto; /* Centers the container horizontally */
+    padding: 0 8%; /* Adds consistent spacing inside the container */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.footer-row {
+    display: flex;
+    justify-content: space-between; /* Ensures equal spacing between columns */
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 15%;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px; /* Increased min-width for better spacing */
+    padding: 0 15px; /* Added padding to separate content inside columns */
+    text-align: left; /* Align content to the left for a more structured look */
+}
+
+.footer-h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-logo {
+    width: 120px;
+    height: auto;
+}
+
+.footer-company-name {
+    font-size: 0.7rem;
+    color: #fff;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.footer-contact-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    font-size: 0.9rem;
+}
+
+.footer-contact-details i {
+    font-size: 1.2rem;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: start; /* Aligned to the start for better layout */
+    align-items: center;
+    gap: 15px;
+    font-size: 1.5rem;
+}
+
+.footer-social a {
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #fff;
+}
+
+.footer-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-form-input {
+    width: 70%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.footer-form-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+.footer-form-button:hover {
+    background-color: #777;
+}
