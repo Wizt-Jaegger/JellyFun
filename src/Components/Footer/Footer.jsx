@@ -2,6 +2,7 @@ import React from 'react';
 import logoFooter from "../../assets/logo.png";
 import "./Footer.css";
 import { Link } from "react-scroll";
+import logoTechPal from "../../assets/logoTechPaltxt.png";
 
 const Footer = () => {
     return (
@@ -65,31 +66,18 @@ const Footer = () => {
                             <i className="fa fa-phone"></i>
                             <p>+52 777 192 4531</p>
                         </div>
-                        {/*
-
-                            <div className="footer-social">
-                            <a href="https://www.facebook.com/p/Colegio-Jiutepequense-William-Shakespeare-100063877390757/" target="_blank" rel="noopener noreferrer">
-                                <i className="fab fa-facebook"></i>
-                            </a>
-                            <a href="https://www.instagram.com/colegio.william.shakespeare/" target="_blank" rel="noopener noreferrer">
-                                <i className="fab fa-instagram"></i>
-                            </a>
-                            <a href="https://www.youtube.com/@colegiojiutepecwilliamshak889" target="_blank" rel="noopener noreferrer">
-                                <i className="fab fa-youtube"></i>
-                            </a>
-                            <a href="https://wa.me/527771924531" target="_blank" rel="noopener noreferrer">
-                                <i className="fab fa-whatsapp"></i>
-                            </a>
-                            <a href="tel:+527771924531">
-                                <i className="fa fa-phone"></i>
-                            </a>
-                        </div>
-
-                        */}
                         
                     </div>
-                </div>
+                </div>    
 
+            </div>
+            <div className='footer-social'>
+            <a className='normalText'>¿Te gustó? Consigue la tuya con nosotros</a>
+                <a className='shortText'>hecho por: </a>
+                <a href="https://techpal.com.mx" target="_blank"> 
+                    <img src={logoTechPal} alt="" />
+                </a>
+                                
             </div>
         </footer>
     );

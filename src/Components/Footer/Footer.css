@@ -82,10 +82,22 @@
 
 .footer-social {
     display: flex;
-    justify-content: start; /* Aligned to the start for better layout */
+    justify-content: end;
     align-items: center;
     gap: 15px;
     font-size: 1.5rem;
+    margin-right: 5rem;
+}
+.footer-social .normalText{
+    font-size: 12px;
+}
+.footer-social .shortText{
+    font-size: 12px;
+    display: none;
+}
+
+.footer-social img{
+    width: 8rem;
 }
 
 .footer-social a {
@@ -126,4 +138,21 @@
 
 .footer-form-button:hover {
     background-color: #777;
+}
+@media(max-width:480px){
+
+    .footer-social .normalText{
+        display: none;
+        visibility: hidden;
+    }
+    .footer-social .shortText{
+        display: block;
+        visibility: visible;
+    }
+}
+@media(max-width:290px){
+    .footer-social .shortText{
+        display: none;
+        visibility: hidden;
+    }
 }
