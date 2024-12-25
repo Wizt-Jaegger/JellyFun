@@ -21,7 +21,7 @@ const App = () =>{
             <Presentacion/>
             <div className="container">
                 <AcercaDe setPlayState={setPlayState}/>
-                <Titulo subTitulo="Nuestros PLANES" titulo="Lo Que Ofrecemos"/>
+                <Titulo subTitulo="Servicios" titulo="Lo Que Ofrecemos"/>
                 <Planes/>
                 <Titulo subTitulo="Galeria" titulo="Fotos De Nuetros Eventos"/>
                 <Galeria/>
