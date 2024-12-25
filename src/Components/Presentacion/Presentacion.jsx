@@ -8,7 +8,7 @@ const Presentacion = () => {
         <div className='presentacion container'>
             <div className='presentacion-texto'>
                 <h1>Un jardín para disfrutar de tus momentos más especiales</h1>
-                <p>Nuestro jardín está pensado para que puedas disfrutar en compañía de tus seres queridos. Tenemos capacidad para hasta 120 personas, contamos con alberca ¡y más!</p>
+                <p>Celebra como en casa!</p>
                 <p>
                  <Link
                     to="planes"
