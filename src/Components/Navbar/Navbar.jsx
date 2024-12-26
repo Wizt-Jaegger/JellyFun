@@ -60,7 +60,7 @@ const Navbar = () => {
             <nav className={`container ${sticky ? 'dark-nav' : ''}`}>
                 <img src={logo} alt="logo Sorelu" className="logo" />
                 <ul className={mobileMenu ? '':'hide-mobile-menu'} >
-                    <li>
+                    <li className="active">
                         <Link to="presentacion" smooth={true} offset={0} duration={500}>
                             Inicio
                         </Link>

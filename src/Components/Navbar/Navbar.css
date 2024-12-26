@@ -16,12 +16,17 @@ nav{
 .logo{
     width: 230px;
 }
-nav ul li{
+nav ul li, nav ul li.active:hover{
     font-family: Georgia;
     display: inline-block;
     list-style: none;
     margin: 5px 20px;
     font-size: 20px;
+    color: #fff;
+}
+nav ul li:hover,
+nav ul li.active {
+    color: #93a021;;
 }
 .dark-nav{
     background: rgba(19, 24, 0, 0.8);
@@ -36,13 +41,13 @@ nav ul li{
     color: #fff !important;
     font-size: 4rem !important;
     width: 80px;
-    height: 80px; /* Para mantener el botón como un círculo */
+    height: 80px; 
     border-radius: 40px 0 0 40px;
     display: flex;
-    align-items: center; /* Centra verticalmente */
-    justify-content: center; /* Centra horizontalmente */
+    align-items: center; 
+    justify-content: center;
     text-decoration: none;
-    padding: 0; /* Quita padding innecesario */
+    padding: 0; 
     z-index: 9999;
 }
 
