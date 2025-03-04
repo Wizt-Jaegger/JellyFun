@@ -4,24 +4,21 @@
 .presentacion{
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(rgba(2, 1, 0, 0.7),rgba(58, 33, 0, 0.7)),url('../../assets/presentacion.png');
+   /* background: linear-gradient(rgba(2, 1, 0, 0.7),rgba(58, 33, 0, 0.7)),url('../../assets/presentacion.png');*/
+    background: url('../../assets/presentacion.png');
     background-size: cover;
     background-position: center;
     color: #fff;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
 }
 .presentacion-texto{
-    text-align: center;
+    text-align: left;
+    
     max-width: 800px;
 }
-.presentacion-texto h1{
-    font-family: "Cardo", serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 70px; 
-}
+
 .presentacion-texto p{
     max-width: 700px;
     margin: 10px auto 20px;

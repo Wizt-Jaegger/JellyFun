@@ -2,7 +2,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
 .footer {
-    background-color: #3f4330;
+    background-color: #000000;
     color: #fff;
     padding: 20px 0;
     width: 100%;
@@ -10,8 +10,8 @@
 
 .footer-container {
     max-width: 1900px;
-    margin: 0 auto; /* Centers the container horizontally */
-    padding: 0 8%; /* Adds consistent spacing inside the container */
+    margin: 0 auto;
+    padding: 0 8%; 
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -20,7 +20,7 @@
 
 .footer-row {
     display: flex;
-    justify-content: space-between; /* Ensures equal spacing between columns */
+    justify-content: space-between; 
     width: 100%;
     flex-wrap: wrap;
     gap: 15%;
@@ -28,17 +28,27 @@
 
 .footer-col {
     flex: 1;
-    min-width: 250px; /* Increased min-width for better spacing */
-    padding: 0 15px; /* Added padding to separate content inside columns */
-    text-align: left; /* Align content to the left for a more structured look */
+    min-width: 250px; 
+    padding: 0 15px; 
+    text-align: left; 
 }
 
 .footer-h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    font-size: 18px;
+	color: #fff;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background: linear-gradient(to right, rgba(3, 217, 253, 0.7), rgba(251, 3, 212, 0.7));
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
 }
 
 .footer-logo {

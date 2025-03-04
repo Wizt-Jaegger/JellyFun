@@ -5,8 +5,10 @@ import galeria_2 from '../../assets/gallery-2.png';
 import galeria_3 from '../../assets/gallery-3.png';
 import galeria_4 from '../../assets/gallery-4.png';
 import flechaBlanca from '../../assets/dark-arrow.png';
+import { useLanguage } from "../../LanguageContext";
 
 const Galeria = () => {
+    const { language } = useLanguage(); 
     const [selectedImage, setSelectedImage] = useState(null);
 
     const openModal = (image) => {
@@ -47,7 +49,7 @@ const Galeria = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
             >
-                Ver más <img src={flechaBlanca} alt="Flecha blanca" />
+                {language === "es" ? "Ver más" : "Watch more"} <img src={flechaBlanca} alt="Flecha blanca" />
             </a>
             {selectedImage && (
                 <div className="modal" onClick={closeModal}>

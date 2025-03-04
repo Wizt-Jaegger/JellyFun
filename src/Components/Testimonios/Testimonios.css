@@ -12,7 +12,7 @@
     width: 50px;
     border-radius: 50%;
     cursor: pointer;
-    background: linear-gradient(rgba(135, 182, 77,0.7),rgba(199, 209, 81,0.7));
+    background: linear-gradient(rgba(3, 217, 253, 0.7),rgba(251, 3, 212,0.7));;
 }
 .atras-btn{
     right: auto;
@@ -45,7 +45,7 @@
     width: 90px;
     border-radius: 50%;
     margin-right: 10px;
-    border:4px solid #93a021;
+    border:4px solid #0ccffc;
 }
 .user-info{
     display: flex;
@@ -54,7 +54,7 @@
     font-size: 19px;
 }
 .user-info h3{
-    color: #93a021;
+    color: #0ccffc;
 }
 .slide p{
     text-align: justify;

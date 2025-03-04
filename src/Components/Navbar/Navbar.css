@@ -26,10 +26,10 @@ nav ul li, nav ul li.active:hover{
 }
 nav ul li:hover,
 nav ul li.active {
-    color: #93a021;;
+    color: #0ecff2;
 }
 .dark-nav{
-    background: rgba(19, 24, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     transition: 0.5s;
 }
 .botonFlotante {
@@ -93,12 +93,22 @@ nav ul li.active {
     text-decoration: none;
     z-index: 9999;
 }
+.menu-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre ENG y el menú */
+}
 
+.engBtn {
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
 .menu-icon{
     display: none;
 }
 
-@media(max-width:1200px){
+@media(max-width:1213px){
     .logo{
         width: 210px;
     }
@@ -112,9 +122,44 @@ nav ul li.active {
         width: 200px;
     }
 }
-@media(max-width:1000px){
+@media(max-width:1090px){
+    .logo{
+        width: 190px;
+    }
+}
+@media(max-width:1070px){
+    .logo{
+        width: 180px;
+    }
+}
+@media(max-width:1035px){
     .logo{
         width: 170px;
+    }
+}
+@media(max-width:1022px){
+    .logo{
+        width: 160px;
+    }
+}
+@media(max-width:1010px){
+    nav ul li{
+        font-size: 19px;
+    }
+}
+@media(max-width:988px){
+    nav ul li{
+        font-size: 18.5px;
+    }
+}
+@media(max-width:976px){
+    nav ul li{
+        font-size: 18.2px;
+    }
+}
+@media(max-width:972px){
+    nav ul li{
+        font-size: 18.1px;
     }
 }
 @media(max-width:970px){
@@ -122,12 +167,39 @@ nav ul li.active {
         font-size: 18px;
     }
 }
+@media(max-width:966.5px){
+    .logo{
+        width: 155px;
+    }
+}
+@media(max-width:957px){
+    
+    nav ul li{
+        font-size: 17px;
+    }
+}
 @media(max-width:965px){
     .logo{
         width: 150px;
     }
 }
-@media(max-width:930px){
+@media(max-width:935px){
+    .menu-icon {
+        display: block; /* Asegura que se muestre */
+        width: 40px; /* Ajusta el tamaño */
+        cursor: pointer;
+    }
+
+    .engBtn {
+        position: relative; /* Mantiene alineado con el menú */
+        font-size: 14px;
+    }
+
+    .menu-container {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
     nav{
         padding: 15px 0;
     }
@@ -136,7 +208,7 @@ nav ul li.active {
         top: 0;
         right: 0;
         bottom: 0;
-        background: rgba(19, 24, 0, 0.8);
+        background: rgba(0, 0, 0, 0.8);
         z-index: -1;
         width: 200px;
         padding-top: 70px;

@@ -25,14 +25,14 @@
     transform: translate(-50%,-50%);
     cursor: pointer;
 }
-.acercaDe h3{
+.acercaDe h2{
     font-weight: 600;
     font-size: 16px;
-    color:#93a021;
+    color:#f607d4;
 }
 .acercaDe h3{
     font-size: 35px;
-    color:#383700;
+    color:#0dd0fc;
     margin: 10px 0;
     max-width: 400px;
 }

@@ -3,8 +3,11 @@ import logoFooter from "../../assets/logo.png";
 import "./Footer.css";
 import { Link } from "react-scroll";
 import logoTechPal from "../../assets/logoTechPaltxt.png";
+import { useLanguage } from "../../LanguageContext"; // Import context
 
 const Footer = () => {
+    const { language } = useLanguage(); // Get language state
+
     return (
         <footer className="footer">
             <div className="footer-container">
@@ -18,38 +21,44 @@ const Footer = () => {
                             <span className="footer-company-name">SA de CV</span>
                         </h3>
                         <div className="footer-links">
-                            <a href="/" target="_blank" rel="noopener noreferrer">Política de privacidad</a>
-                            <a href="/" target="_blank" rel="noopener noreferrer">Términos y condiciones</a>
+                            <a href="/" target="_blank" rel="noopener noreferrer">
+                                {language === "es" ? "Política de privacidad" : "Privacy Policy"}
+                            </a>
+                            <a href="/" target="_blank" rel="noopener noreferrer">
+                                {language === "es" ? "Términos y condiciones" : "Terms and Conditions"}
+                            </a>
                         </div>
                     </div>
 
                     {/* Services Section */}
                     <div className="footer-col" id="services">
-                        <h3 className="footer-h3">Indice</h3>
+                        <h3 className="footer-h3">
+                            {language === "es" ? "Índice" : "Index"}
+                        </h3>
                         <div className="footer-links">
                             <a>
                                 <Link to="presentacion" smooth={true} offset={0} duration={500}>
-                                    Inicio
+                                    {language === "es" ? "Inicio" : "Home"}
                                 </Link>
                             </a>
                             <a>
                                 <Link to="acercaDe" smooth={true} offset={-150} duration={500}>
-                                    Acerca de
+                                    {language === "es" ? "Acerca de" : "About"}
                                 </Link>
                             </a>
                             <a>
                                 <Link to="planes" smooth={true} offset={-260} duration={500}>
-                                     Planes
+                                    {language === "es" ? "Planes" : "Plans"}
                                 </Link>
                             </a>
                             <a>
-                                 <Link to="galeria" smooth={true} offset={-260} duration={500}>
-                                    Galería
+                                <Link to="galeria" smooth={true} offset={-260} duration={500}>
+                                    {language === "es" ? "Galería" : "Gallery"}
                                 </Link>
                             </a>
                             <a>
                                 <Link to="testimonios" smooth={true} offset={-260} duration={500}>
-                                    Testimonios
+                                    {language === "es" ? "Testimonios" : "Testimonials"}
                                 </Link>
                             </a>
                         </div>
@@ -57,27 +66,31 @@ const Footer = () => {
 
                     {/* Contact Section */}
                     <div className="footer-col" id="contact">
-                        <h3 className="footer-h3">Contacto</h3>
+                        <h3 className="footer-h3">
+                            {language === "es" ? "Contacto" : "Contact"}
+                        </h3>
                         <div className="footer-contact-details">
                             <i className="fa fa-location"></i>
-                            <p>Calle Benito Juarez s/n Esq. Villa de Tezoyuca<br />Zapata, Mor. Mex</p>
+                            <p>{language === "es" ? "Calle Benito Juarez s/n Esq. Villa de Tezoyuca" : "Benito Juarez St. No. Villa de Tezoyuca"}<br />
+                            {language === "es" ? "Zapata, Mor. Mex" : "Zapata, Mor. Mex"}</p>
                         </div>
                         <div className="footer-contact-details">
                             <i className="fa fa-phone"></i>
                             <p>+52 777 192 4531</p>
                         </div>
-                        
                     </div>
-                </div>    
-
+                </div>
             </div>
             <div className='footer-social'>
-            <a className='normalText'>¿Te gustó? Consigue la tuya con nosotros</a>
-                <a className='shortText'>hecho por: </a>
-                <a href="https://techpal.com.mx" target="_blank"> 
+                <a className='normalText'>
+                    {language === "es" ? "¿Te gustó? Consigue la tuya con nosotros" : "Did you like it? Get yours with us"}
+                </a>
+                <a className='shortText'>
+                    {language === "es" ? "hecho por: " : "made by: "}
+                </a>
+                <a href="https://techpal.com.mx" target="_blank">
                     <img src={logoTechPal} alt="" />
                 </a>
-                                
             </div>
         </footer>
     );
