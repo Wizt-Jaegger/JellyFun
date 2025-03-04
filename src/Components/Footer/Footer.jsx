@@ -70,20 +70,20 @@ const Footer = () => {
                             {language === "es" ? "Contacto" : "Contact"}
                         </h3>
                         <div className="footer-contact-details">
-                            <i className="fa fa-location"></i>
-                            <p>{language === "es" ? "Calle Benito Juarez s/n Esq. Villa de Tezoyuca" : "Benito Juarez St. No. Villa de Tezoyuca"}<br />
-                            {language === "es" ? "Zapata, Mor. Mex" : "Zapata, Mor. Mex"}</p>
+                            <i className="fa fa-location"></i> 
+                            <p>{language === "es" ? "Boulevard Cuauhnáhuac #566, Col. Lomas del Texcal, Código postal 62550" : "Boulevard Cuauhnahuac #566, Col. Lomas del Texcal, Postal code 62550"}<br />
+                            {language === "es" ? "Jiutepec, Morelos, México" : "Jiutepec, Mor. Mex"}</p>
                         </div>
                         <div className="footer-contact-details">
                             <i className="fa fa-phone"></i>
-                            <p>+52 777 192 4531</p>
+                            <p>+52 777 990 4960</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div className='footer-social'>
                 <a className='normalText'>
-                    {language === "es" ? "¿Te gustó? Consigue la tuya con nosotros" : "Did you like it? Get yours with us"}
+                    {language === "es" ? "¿Te gustó? Mira lo que hicieron nuestros colegas" : "Did you like it? Watch what our classmates designed"}
                 </a>
                 <a className='shortText'>
                     {language === "es" ? "hecho por: " : "made by: "}
