@@ -1,35 +1,31 @@
-
 import React, { useState, useEffect } from "react";
 import './Navbar.css';
 import logo from '../../assets/logo.png';
 import menu_icon from '../../assets/menu-icon.png';
+import tache_icon from '../../assets/tache.png'; // Importa la imagen de tache
 import { Link } from "react-scroll";
-import { useLanguage } from "../../LanguageContext"; // Import context
+import { useLanguage } from "../../LanguageContext"; 
 
 const Navbar = () => {
-    const { language, toggleLanguage } = useLanguage(); // Get language state
-
+    const { language, toggleLanguage } = useLanguage(); 
     const [sticky, setSticky] = useState(false);
     const [mobileMenu, setMobileMenu] = useState(false);
+    const [trayectoriaMenu, setTrayectoriaMenu] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
             setSticky(window.scrollY > 50);
         };
-
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
-    const toggleMenu = () => {
-        mobileMenu ? setMobileMenu(false) : setMobileMenu(true);
-    }
-
+    const toggleMenu = () => setMobileMenu(!mobileMenu);
+    const toggleTrayectoriaMenu = () => setTrayectoriaMenu(!trayectoriaMenu);
 
     return (
-
         <div>
             {/* Botón flotante para WhatsApp */}
             <a
@@ -39,27 +35,29 @@ const Navbar = () => {
                 rel="noopener noreferrer"
                 title="¡Whasaaaa!"
             >
-                <span aria-hidden="true"></span>
                 <i className="fab fa-whatsapp"></i>
-                <span aria-hidden="true"></span>
             </a>
 
             {/* Botón flotante para subir */}
             <a
                 className={`botonUp ${sticky ? 'dark-botonUp' : ''}`}
                 title="¡Pa' arriba!"
-            >   <Link to="presentacion" smooth={true} offset={0} duration={800}>
-                    <i class='bx bx-chevron-up-circle'></i>
+            >
+                <Link to="presentacion" smooth={true} offset={0} duration={800}>
+                    <i className='bx bx-chevron-up-circle'></i>
                 </Link>
             </a>
+
             {/* Botón flotante para bajar */}
             <a
                 className={`botonDown ${sticky ? 'dark-botonDown' : ''}`}
                 title="¡Pa' abajo!"
-            >   <Link to="footer" smooth={true} offset={0} duration={1000}>
+            >
+                <Link to="footer" smooth={true} offset={0} duration={1000}>
                     <i className='bx bx-chevron-down-circle'></i>
                 </Link>
             </a>
+
             <nav className={`container ${sticky ? 'dark-nav' : ''}`}>
                 <img src={logo} alt="logo Sorelu" className="logo" />
                 <ul className={mobileMenu ? '' : 'hide-mobile-menu'}>
@@ -78,32 +76,44 @@ const Navbar = () => {
                             {language === "es" ? "Planes" : "Plans"}
                         </Link>
                     </li>
-                    <li>
-                        <Link to="galeria" smooth={true} offset={-260} duration={500}>
-                            {language === "es" ? "Galería" : "Gallery"}
-                        </Link>
+                    <li className="dropdown" onMouseEnter={toggleTrayectoriaMenu} onMouseLeave={toggleTrayectoriaMenu}>
+                        <span>{language === "es" ? "Trayectoria 🢓" : "Trajectory 🢓"}</span>
+                        <ul className={`submenu ${trayectoriaMenu ? 'show' : ''}`}>
+                            <li>
+                                <Link to="galeria" smooth={true} offset={-260} duration={500}>
+                                    {language === "es" ? "Galería" : "Gallery"}
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="testimonios" smooth={true} offset={-260} duration={500}>
+                                    {language === "es" ? "Testimonios" : "Testimonials"}
+                                </Link>
+                            </li>
+                        </ul>
                     </li>
-                    <li>
-                        <Link to="testimonios" smooth={true} offset={-260} duration={500}>
-                            {language === "es" ? "Testimonios" : "Testimonials"}
-                        </Link>
-                    </li>
-                    <li>
+                    <li className="contactoBtn">
                         <Link to="contacto" smooth={true} offset={-260} duration={500} className="btn">
                             {language === "es" ? "Contáctanos" : "Contact Us"}
                         </Link>
                     </li>
                 </ul>
+                <div className="menu-container">
 
-                {/* ENG Button to toggle language */}
-                <div className="engBtn" onClick={toggleLanguage}>
-                    {language === "es" ? "ENG" : "ESP"}
+                    <div className="engBtn" onClick={toggleLanguage}>
+                        {language === "es" ? "ENG" : "ESP"}
+                    </div>
+                    {/* Cambio dinámico de la imagen del icono del menú */}
+                    <img 
+                        src={mobileMenu ? tache_icon : menu_icon} 
+                        alt="menu" 
+                        className="menu-icon" 
+                        onClick={toggleMenu} 
+                    />
+
                 </div>
-
-                <img src={menu_icon} alt="menu" className="menu-icon" onClick={toggleMenu} />
+                
             </nav>
         </div>
-        
     );
 };
 
