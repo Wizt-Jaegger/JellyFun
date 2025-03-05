@@ -14,21 +14,21 @@ const Planes = () => {
                 <img src={plan_1} alt=''/>
                 <div className='subtitulo'>
                     <img src={plan_icon_1} alt=''/>
-                    <p>Mobiliario y Mantelería</p>
+                    <p>Gelatinas Modernas</p>
                 </div>
             </div>
             <div className="plan">
                 <img src={plan_2} alt=''/>
                 <div className='subtitulo'>
                     <img src={plan_icon_2} alt=''/>
-                    <p>Sala Lounge y Parrilla</p>
+                    <p>Gelatinas Caseras</p>
                 </div>
             </div>
             <div className="plan">
                 <img src={plan_3} alt=''/>
                 <div className='subtitulo'>
                     <img src={plan_icon_3} alt=''/>
-                    <p>Refrigerador, Internet y Bocinas</p>
+                    <p>Gelatinas sorpresa</p>
                 </div>
             </div>
             
