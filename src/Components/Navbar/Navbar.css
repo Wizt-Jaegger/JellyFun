@@ -221,18 +221,20 @@ nav ul li.active {
     }
     
     .submenu {
-        position:fixed;
+        position: fixed;
         border-radius: 16px;
-        top: 30vh;
-        bottom: 53vh;
-        left: 65vh;
-        background: rgba(41, 1, 45, 0.8);
+        top: 30vh; /* No change, already percentage-based */
+        bottom: auto; /* Removed 'bottom' to avoid conflict with 'top' */
+        right: 12rem !important;
+        left: auto;
+        background: rgba(41, 1, 45, 0.7);
         list-style: none;
         padding: 0;
         margin: 0;
-        padding-right: 16rem;
         display: none;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        width: 20vw; /* Adjust width based on screen percentage */
+        height: 20vh; /* Adjust height proportionally */
     }
     
     .submenu li {
