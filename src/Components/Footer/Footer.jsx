@@ -86,7 +86,7 @@ const Footer = () => {
                     {language === "es" ? "¿Te gustó? Mira lo que hicieron nuestros colegas" : "Did you like it? Watch what our classmates designed"}
                 </a>
                 <a className='shortText'>
-                    {language === "es" ? "hecho por: " : "made by: "}
+                    {language === "es" ? "También visita: " : "Also check: "}
                 </a>
                 <a href="https://techpal.com.mx" target="_blank">
                     <img src={logoTechPal} alt="" />
