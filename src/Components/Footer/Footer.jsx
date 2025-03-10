@@ -88,7 +88,7 @@ const Footer = () => {
                 <a className='shortText'>
                     {language === "es" ? "También visita: " : "Also check: "}
                 </a>
-                <a href="https://techpal.com.mx" target="_blank">
+                <a href="https://www.tiendatecnologia.x10.mx/" target="_blank">
                     <img src={logoTechPal} alt="" />
                 </a>
             </div>
