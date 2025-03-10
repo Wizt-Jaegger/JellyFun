@@ -1,36 +1,69 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './Contacto.css';
-import msg_icon from '../../assets/msg-icon.png'
-import mail_icon from '../../assets/mail-icon.png'
-import phone_icon from '../../assets/phone-icon.png'
-import location_icon from '../../assets/location-icon.png'
-import { useLanguage } from "../../LanguageContext"; // Import context
+import msg_icon from '../../assets/msg-icon.png';
+import mail_icon from '../../assets/mail-icon.png';
+import phone_icon from '../../assets/phone-icon.png';
+import location_icon from '../../assets/location-icon.png';
+import { useLanguage } from "../../LanguageContext";
 
 const Contacto = () => {
-    const { language } = useLanguage(); // Get the current language
+    const { language } = useLanguage();
+    const [result, setResult] = useState("");
+    const [messages, setMessages] = useState([]);
 
-    const [result, setResult] = React.useState("");
+    useEffect(() => {
+        const fetchMessages = async () => {
+            try {
+                const response = await fetch("https://d1-jellyfun.vilfront.workers.dev/api/posts/hello-world/comments");
+                const data = await response.json();
+                setMessages(data);
+            } catch (error) {
+                console.error("Error fetching messages:", error);
+            }
+        };
+        fetchMessages();
+    }, []);
 
     const onSubmit = async (event) => {
         event.preventDefault();
         setResult(language === "es" ? "Enviando...." : "Sending....");
         const formData = new FormData(event.target);
+        const nombre = formData.get("nombre");
+        const mensaje = formData.get("mensaje");
 
         formData.append("access_key", "8fa52b60-4c48-4ef8-91d4-098bc7c5bc4a");
 
-        const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            body: formData
-        });
+        try {
+            const [web3Response, workerResponse] = await Promise.all([
+                fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    body: formData
+                }),
+                fetch("https://d1-jellyfun.vilfront.workers.dev/api/posts/hello-world/comments", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        author: nombre,
+                        body: mensaje
+                    })
+                })
+            ]);
 
-        const data = await response.json();
+            const web3Data = await web3Response.json();
+            const workerData = await workerResponse.json();
 
-        if (data.success) {
-            setResult(language === "es" ? "Mensaje enviado con exito!" : "Message sent successfully!");
-            event.target.reset();
-        } else {
-            console.log("Error", data);
-            setResult(data.message);
+            if (web3Data.success && workerData) {
+                setResult(language === "es" ? "Mensaje enviado con éxito!" : "Message sent successfully!");
+                event.target.reset();
+            } else {
+                console.log("Error", web3Data, workerData);
+                setResult("Error al enviar el mensaje");
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            setResult("Error de conexión");
         }
     };
 
@@ -43,6 +76,19 @@ const Contacto = () => {
                     <li><img src={mail_icon} alt="" />rglo210933@upemor.edu.mx</li>
                     <li><img src={phone_icon} alt="" />+52 777-990-4960</li>
                     <li> <img src={location_icon} alt="" />Boulevard Cuauhnáhuac #566, Col. Lomas del Texcal, Jiutepec<br /> {language === "es" ? "Código postal 62550, Morelos, México" : "Postal code 62550, Morelos, Mexico"}</li>
+                    <h3>{language === "es" ? "Mensajes recientes:" : "Recent Messages:"}</h3>
+                    <li>
+                        
+                        <div className="messages-container">
+                            {messages.length > 0 ? (
+                                messages.slice(-4).map((msg, index) => (
+                                    <p key={index}><strong>{msg.author}:</strong>: {msg.body}</p>
+                                ))
+                            ) : (
+                                <p>{language === "es" ? "No hay mensajes aún." : "No messages yet."}</p>
+                            )}
+                        </div>
+                    </li>
                 </ul>
             </div>
             <div className="contacto-col">
@@ -67,6 +113,6 @@ const Contacto = () => {
             </div>
         </div>
     );
-}
+};
 
 export default Contacto;
