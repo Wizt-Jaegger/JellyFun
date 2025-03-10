@@ -58,10 +58,10 @@ const Contacto = () => {
                 workerData = await workerResponse.json();
             } catch (error) {
                 console.warn("Error parsing worker response, but ignoring it:", error);
-                workerData = {}; // Evita que el error afecte la lógica
+                workerData = {}; 
             }
         
-            if (web3Data.success) { // Ya no chequeamos workerData
+            if (web3Data.success) { 
                 setResult(language === "es" ? "Mensaje enviado con éxito!" : "Message sent successfully!");
                 event.target.reset();
             } else {
@@ -89,7 +89,7 @@ const Contacto = () => {
                         <div className="messages-container">
                             {messages.length > 0 ? (
                                 messages.slice(-4).map((msg, index) => (
-                                    <p key={index}><strong>{msg.author}:</strong>: {msg.body}</p>
+                                    <p key={index}><strong>{msg.author}:</strong> {msg.body}</p>
                                 ))
                             ) : (
                                 <p>{language === "es" ? "No hay mensajes aún." : "No messages yet."}</p>
