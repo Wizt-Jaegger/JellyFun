@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import './Navbar.css';
 import logo from '../../assets/logo.png';
 import menu_icon from '../../assets/menu-icon.png';
-import tache_icon from '../../assets/tache.png'; // Importa la imagen de tache
+import tache_icon from '../../assets/tache.png';
+import dropdown_icon from '../../assets/dropdown.png'; // Importa el icono de dropdown
+import closedown_icon from '../../assets/closedown.png'; // Importa el icono de cerrado
 import { Link } from "react-scroll";
 import { useLanguage } from "../../LanguageContext"; 
 
@@ -76,8 +78,20 @@ const Navbar = () => {
                             {language === "es" ? "Planes" : "Plans"}
                         </Link>
                     </li>
-                    <li className="dropdown" onMouseEnter={toggleTrayectoriaMenu} onMouseLeave={toggleTrayectoriaMenu}>
-                        <span>{language === "es" ? "Trayectoria 🢓" : "Trajectory 🢓"}</span>
+                    <li 
+                        className="dropdown" 
+                        onMouseEnter={toggleTrayectoriaMenu} 
+                        onMouseLeave={toggleTrayectoriaMenu}
+                    >
+                        <span>
+                            {language === "es" ? "Trayectoria" : "Trajectory"}
+                        </span>
+                        {/* Imagen dinámica para dropdown */}
+                        <img 
+                            src={trayectoriaMenu ? closedown_icon : dropdown_icon} 
+                            alt="Dropdown Icon" 
+                            className="dropdown-icon" 
+                        />
                         <ul className={`submenu ${trayectoriaMenu ? 'show' : ''}`}>
                             <li>
                                 <Link to="galeria" smooth={true} offset={-260} duration={500}>
@@ -98,7 +112,6 @@ const Navbar = () => {
                     </li>
                 </ul>
                 <div className="menu-container">
-
                     <div className="engBtn" onClick={toggleLanguage}>
                         {language === "es" ? "ENG" : "ESP"}
                     </div>
@@ -109,9 +122,7 @@ const Navbar = () => {
                         className="menu-icon" 
                         onClick={toggleMenu} 
                     />
-
                 </div>
-                
             </nav>
         </div>
     );

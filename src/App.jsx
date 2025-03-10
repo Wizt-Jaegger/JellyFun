@@ -39,7 +39,7 @@ const App = () => {
                 <Testimonios />
                 <Titulo 
                     subTitulo={language === "es" ? "Contactanos" : "Contact Us"} 
-                    titulo={language === "es" ? "Ponte en Contacto" : "Get in Touch"} 
+                    titulo={language === "es" ? "Danos tu opinión" : "Your feedback"} 
                 />
                 <Contacto />
                 <Maps />
