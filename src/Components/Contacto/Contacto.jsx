@@ -31,7 +31,7 @@ const Contacto = () => {
         const nombre = formData.get("nombre");
         const mensaje = formData.get("mensaje");
 
-        formData.append("access_key", "8fa52b60-4c48-4ef8-91d4-098bc7c5bc4a");
+        formData.append("access_key", "cd5a296f-47dd-4026-8472-7190b1a149f3");
 
         try {
             const [web3Response, workerResponse] = await Promise.all([
@@ -50,11 +50,18 @@ const Contacto = () => {
                     })
                 })
             ]);
-
+        
             const web3Data = await web3Response.json();
-            const workerData = await workerResponse.json();
-
-            if (web3Data.success && workerData) {
+        
+            let workerData;
+            try {
+                workerData = await workerResponse.json();
+            } catch (error) {
+                console.warn("Error parsing worker response, but ignoring it:", error);
+                workerData = {}; // Evita que el error afecte la lógica
+            }
+        
+            if (web3Data.success) { // Ya no chequeamos workerData
                 setResult(language === "es" ? "Mensaje enviado con éxito!" : "Message sent successfully!");
                 event.target.reset();
             } else {
