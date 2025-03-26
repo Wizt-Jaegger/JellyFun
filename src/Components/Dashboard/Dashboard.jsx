@@ -52,6 +52,12 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
+        <div className="dashboard-name">
+            {language === "es" ? "Bienvenido al Panel de Administración" : "Welcome to the Admin Dashboard"}
+            <button onClick={toggleLanguage} className="edit-btn">
+                {language === "es" ? "Cambiar a Inglés" : "Switch to Spanish"}
+            </button>
+        </div> 
       <div className="dashboard-content">
         <h2 className="dashboard-title">{language === "es" ? "Administrar comentarios" : "Manage Comments"}</h2>
         
@@ -65,12 +71,7 @@ const Dashboard = () => {
         ) : (
           comments.map((comment) => (
             <div className='todo'>
-                <div className="dashboard-name">
-                    {language === "es" ? "Bienvenido al Panel de Administración" : "Welcome to the Admin Dashboard"}
-                    <button onClick={toggleLanguage} className="edit-btn">
-                        {language === "es" ? "Cambiar a Inglés" : "Switch to Spanish"}
-                    </button>
-                </div> 
+                
                 <div key={comment.id} className="comment-item">
                     {editingComment === comment.id ? (
                         <div className="comment-container">
