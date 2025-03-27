@@ -1,4 +1,11 @@
 @import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+#userwayAccessibilityIcon {
+    /*top: 84vh!important;
+    right: 15px !important;*/
+    top:.5vh!important;
+    right: 3vh !important;
+}
+
 
 nav{
     width: 100%;
@@ -151,6 +158,10 @@ nav ul li.active {
     nav ul li{
         margin: 10px 15px;
     }
+    #userwayAccessibilityIcon {
+        top:6vh!important;
+        right: 3vh !important;
+    }
 
 }
 @media(max-width:1100px){
@@ -220,6 +231,10 @@ nav ul li.active {
     }
 }
 @media(max-width:935px){
+    #userwayAccessibilityIcon {
+        top:0!important;
+        right: 15vh !important;
+    }
     .dropdown {
         position: relative;
         cursor: pointer;
@@ -228,8 +243,8 @@ nav ul li.active {
     .submenu {
         position: static;
         border-radius: 16px;
-        top: 30vh; /* No change, already percentage-based */
-        bottom: auto; /* Removed 'bottom' to avoid conflict with 'top' */
+        top: 30vh; 
+        bottom: auto;
         right: 60px !important;
         left: auto;
         background: rgba(41, 1, 45, 0.7);
@@ -239,7 +254,7 @@ nav ul li.active {
         display: none;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         width: 190px;
-        height: 15vh; /* Adjust height proportionally */
+        height: 15vh; 
     }
     
     .submenu li {
@@ -252,17 +267,17 @@ nav ul li.active {
     }
 
     .menu-icon {
-        display: block; /* Asegura que se muestre */
-        width: 40px; /* Ajusta el tamaño */
+        display: block; 
+        width: 40px; 
         cursor: pointer;
     }
 
     menu-container {
         display: flex;
-        align-items: center; /* Align items vertically */
-        justify-content: flex-end; /* Push items to the right */
+        align-items: center; 
+        justify-content: flex-end; 
         gap: 10px;
-        margin-left: auto; /* Push container to the right */
+        margin-left: auto; 
     }
     
 
