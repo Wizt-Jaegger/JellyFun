@@ -3,6 +3,7 @@
 .input-field,
 .textarea-field {
   padding: 10px;
+  
   border: none;
   background-color: #eaeaea;
   border-radius: 9px;
@@ -10,30 +11,39 @@
   font-size: 16px;
   transition: background-color 0.3s ease-in-out;
 }
+.comment-text {
+  font-family: 'Ubuntu', sans-serif;
+}
 
 .comment-container {
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 10px;
   padding-bottom: 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background-color: rgba(234, 234, 234, 0.6);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .dashboard-name {
-  width: 100%;
-  position: fixed;
-  padding: 20px;
-  top: 0px;
-  left: 0px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  font-size: 2rem;
-  color: white;
-}
+    position: fixed;
+    top: 2px;
+    left: 2px;
+    right: 2px; /* Espacio de sobra a la derecha */
+    padding: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 2rem;
+    color: white;
+  }
+  
 
 .dashboard-container {
   display: flex;
@@ -50,18 +60,26 @@
 .dashboard-content {
   width: 80%;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  margin-top: 90px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard-title {
-  color: #333;
-  font-size: 2rem;
-  text-align: center;
-}
+    font-size: 2rem;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+    background-image: linear-gradient(40deg, rgba(3, 217, 253, 0.7), rgba(251, 3, 212, 0.7));
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  
 
-.user-info {
+.dash-user-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -127,17 +145,19 @@
 }
 
 .edit-btn {
-  background: linear-gradient(rgba(3, 217, 253, 0.7), rgba(251, 3, 212, 0.7));
+  background: linear-gradient(40deg, rgba(3, 217, 253, 0.7), rgba(251, 3, 212, 0.7));
   color: white;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .edit-btn:hover {
-  background-color: linear-gradient(40deg, rgba(3, 217, 253, 0.7), rgba(251, 3, 212, 0.7));
+  background: linear-gradient(40deg, rgba(5, 183, 215, 0.7), rgba(195, 9, 167, 0.7));
 }
 
 .delete-btn {
   background-color: #f44336;
   color: white;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .delete-btn:hover {
