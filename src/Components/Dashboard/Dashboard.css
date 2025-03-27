@@ -3,8 +3,10 @@
 .input-field,
 .textarea-field {
   padding: 10px;
-  
   border: none;
+  height: 30px;
+  width: auto;
+  max-width: 20rem;
   background-color: #eaeaea;
   border-radius: 9px;
   box-sizing: border-box;
@@ -22,6 +24,7 @@
   padding-bottom: 10px;
   border-radius: 20px;
   margin-bottom: 10px;
+  
   background-color: rgba(234, 234, 234, 0.6);
   display: flex;
   justify-content: space-between;
