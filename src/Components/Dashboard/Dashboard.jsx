@@ -55,7 +55,7 @@ const Dashboard = () => {
         <div className="dashboard-name">
             {language === "es" ? "Bienvenido al Panel de Administración" : "Welcome to the Admin Dashboard"}
             <button onClick={toggleLanguage} className="edit-btn">
-                {language === "es" ? "Cambiar a Inglés" : "Switch to Spanish"}
+                {language === "es" ? "ENG" : "ESP"}
             </button>
         </div> 
       <div className="dashboard-content">
