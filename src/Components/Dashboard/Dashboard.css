@@ -35,7 +35,7 @@
     position: fixed;
     top: 2px;
     left: 2px;
-    right: 2px; /* Espacio de sobra a la derecha */
+    right: 2px; 
     padding: 20px;
     font-family: 'Ubuntu', sans-serif;
     display: flex;
@@ -211,7 +211,7 @@
   body {
     font-size: 12px;
   }
-
+  
   .user-table th, .user-table td {
     font-size: 12px;
   }
@@ -225,10 +225,15 @@
     font-size: 1.5rem;
     padding: 15px;
   }
+  .input-field,
+.textarea-field {
+    margin-bottom: 10px;
+    max-width: 140px;
+}
 
   .comment-container {
-    padding-left: 10px;
-    padding-right: 10px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .comment-item {
@@ -239,4 +244,5 @@
     font-size: 10px;
     padding: 4px 8px;
   }
+ 
 }
