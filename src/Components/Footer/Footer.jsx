@@ -21,10 +21,10 @@ const Footer = () => {
                             <span className="footer-company-name">SA de CV</span>
                         </h3>
                         <div className="footer-links">
-                            <a href="/" target="_blank" rel="noopener noreferrer">
+                            <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">
                                 {language === "es" ? "Política de privacidad" : "Privacy Policy"}
                             </a>
-                            <a href="/" target="_blank" rel="noopener noreferrer">
+                            <a href="/terms-and-conditions" target="_blank" rel="noopener noreferrer">
                                 {language === "es" ? "Términos y condiciones" : "Terms and Conditions"}
                             </a>
                         </div>

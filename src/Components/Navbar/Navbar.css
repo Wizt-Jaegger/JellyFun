@@ -2,11 +2,18 @@
 #userwayAccessibilityIcon {
     /*top: 84vh!important;
     right: 15px !important;*/
+    background: rgba(0, 0, 0, 0.8) !important;
     position: fixed !important;
     top:60vh!important;
     right: 0px!important;
 }
-
+body .uwy .uai,  
+body .uwy .ulsti,  
+#userwayAccessibilityIcon,  
+.uwy .uai,  
+.uwy .ulsti {  
+    background: rgba(0, 0, 0, 0.8) !important; /* Change to red for testing */
+}
 
 nav{
     width: 100%;
