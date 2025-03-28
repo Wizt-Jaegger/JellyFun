@@ -28,7 +28,7 @@ const ContainerApp = () => {
                 />
                 <Planes />
                 <Titulo 
-                    subTitulo={language === "es" ? "Galeria" : "Gallery"} 
+                    subTitulo={language === "es" ? "GALERÍA" : "Gallery"} 
                     titulo={language === "es" ? "Nuestras Mejores Gelatinas" : "Our Best Jellies"} 
                 />
                 <Galeria />
@@ -38,7 +38,7 @@ const ContainerApp = () => {
                 />
                 <Testimonios />
                 <Titulo 
-                    subTitulo={language === "es" ? "Contactanos" : "Contact Us"} 
+                    subTitulo={language === "es" ? "CONTÁCTANOS" : "Contact Us"} 
                     titulo={language === "es" ? "Danos tu opinión" : "Your feedback"} 
                 />
                 <Contacto />
