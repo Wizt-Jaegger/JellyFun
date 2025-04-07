@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Dashboard.css';
-import { useLanguage } from "../../LanguageContext"; // Import the language context
+import { useLanguage } from "../../LanguageContext";
 
 const Dashboard = () => {
-  const { language, toggleLanguage } = useLanguage(); // Access language and toggle function
+  const { language, toggleLanguage } = useLanguage();
   const [comments, setComments] = useState([]);
   const [editingComment, setEditingComment] = useState(null);
   const [author, setAuthor] = useState('');
